@@ -1,0 +1,108 @@
+modpack:
+  name: Multimod Fabric
+  description: A modpack combining popular mods to create a great, fast and smooth Minecraft experience.
+  
+install:
+  mcVersion: 1.17.1
+  loaderVersion: 0.11.7
+  modpackUrl: https://media.forgecdn.net/files/3524/424/Multimod+Fabric-1.0.6.zip
+  installerUrl: https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.9.0/fabric-installer-0.9.0.jar
+  
+  ignoreFiles:
+    - mods/optifine*.jar
+    - resources/**
+  additionalFiles:
+  localFiles: ~
+  
+  installerArguments:
+    - "server"
+    - "-downloadMinecraft"
+    - "-snapshot"
+    - "-mcversion"
+    - "1.17.1"
+    - "-loader"
+    - "0.11.7"
+  modpackFormat: curse
+  formatSpecific:
+    ignoreProject:
+      - 308702 #Mod Menu
+      - 313219 #Health Overlay
+      - 325492 #Light Overlay
+      - 325625 #Roughly Enough Resources
+      - 354047 #Ok Zoomer
+      - 355583 #Advancements Enlarger
+      - 360449 #Egg Tab
+      - 361550 #No Potion Offset
+      - 365521 #Pling
+      - 380393 #'Slight' Gui Modifications
+      - 400929 #cAn i MiNe thIS bLOCk?
+      - 401978 #Disable Custom Worlds Advice
+      - 515818 #[Fabric] Extended Armor Bars
+      - 514882 #Advancement Plaques [Fabric]
+      - 248787 #AppleSkin
+      - 356643 #Auth Me
+      - 495453 #Axolotl Bucket Fix
+      - 413259 #Better Controls
+      - 437443 #Better Sodium Video Settings 
+      - 401648 #BetterF3
+      - 378696 #Charmonium
+      - 308793 #Clear Despawn (Fabric)
+      - 411848 #Custom Stars [Fabric]
+      - 365727 #Dark Loading Screen
+      - 451860 #DefaultSettings Fabric
+      - 430824 #Dynamic Music
+      - 527023 #Eating Animation [Fabric]
+      - 250419 #Enchantment Descriptions
+      - 417510 #Falling Leaves (Fabric)
+      - 292908 #Illuminations
+      - 399798 #Item Model Fix (Fabric)
+      - 433518 #LazyDFU
+      - 435141 #No Angled Brackets
+      - 354339 #Open Loader
+      - 480657 #Replanter
+      - 377109 #Tool Stats
+      - 521126 #Visuality [Fabric]
+      - 60089 #Mouse Tweaks
+  baseInstallPath: ~
+  checkFolder: yes
+  installLoader: yes
+  spongeBootstrapper: ~
+
+launch:
+  # specifies the max amount of ram the server is supposed to launch with (Xmx)
+  maxRam: 5G
+  # specifies the minimal amount of ram the server is supposed to launch with (Xms)
+  minRam: 5G
+  # specifies whether the server is supposed to auto restart after crash
+  autoRestart: yes
+  javaArgs:
+    - "-server"
+    - "-XX:+UseG1GC"
+    - "-XX:+ParallelRefProcEnabled"
+    - "-XX:MaxGCPauseMillis=100"
+    - "-XX:+UnlockExperimentalVMOptions"
+    - "-XX:+DisableExplicitGC"
+    - "-XX:+AlwaysPreTouch"
+    - "-XX:G1NewSizePercent=30"
+    - "-XX:G1MaxNewSizePercent=40"
+    - "-XX:G1HeapRegionSize=8M"
+    - "-XX:G1ReservePercent=20"
+    - "-XX:G1HeapWastePercent=5" 
+    - "-XX:G1MixedGCCountTarget=4" 
+    - "-XX:InitiatingHeapOccupancyPercent=15" 
+    - "-XX:G1MixedGCLiveThresholdPercent=90" 
+    - "-XX:G1RSetUpdatingPauseTimePercent=5" 
+    - "-XX:SurvivorRatio=32" 
+    - "-XX:+PerfDisableSharedMem" 
+    - "-XX:MaxTenuringThreshold=1" 
+    - "-Dusing.aikars.flags=https://mcflags.emc.gs" 
+    - "-Daikars.new.flags=true"
+    
+  spongefix: no
+  ramDisk: no
+  checkOffline: no
+  crashLimit: 10
+  crashTimer: 60min
+  preJavaArgs: ~
+  startFile: fabric-server-launch.jar
+  forcedJavaPath: ~
